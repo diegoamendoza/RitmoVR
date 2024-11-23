@@ -1,0 +1,53 @@
+[Info]
+Version = 3
+
+[Effect]
+Obj = none
+Obj[0] = MES40\sky.fx
+Obj[1] = MES40\PURUTABNEW.fx
+Obj[2] = MES40\YUKAYOKO2.fx
+Obj[3] = MES40\YUKAN.fx
+Obj[4] = MES40\ORANGE3.fx
+Obj[5] = MES40\MONO_ALL_SDWALL.fx
+Obj[6] = MES40\VC.fx
+Obj[7] = MES40\LEAF.fx
+Obj[8] = MES40\water.fx
+Obj[9] = MES40\water.fx
+Obj[10] = MES40\VC.fx
+Obj[11] = MES40\grass.fx
+Obj[12] = MES40\grass.fx
+Obj[13] = MES40\grass.fx
+Obj[14] = MES40\grass.fx
+Obj[15] = MES40\grass.fx
+Obj[16] = MES40\grass.fx
+Obj[17] = MES40\grass.fx
+Obj[18] = MES40\grass.fx
+Obj[19] = MES40\grass.fx
+Obj[20] = MES40\TRAIN_05_SDW.fx
+Obj[21] = MES40\carVC.fx
+Obj[22] = MES40\TRAIN_05_SDW2.fx
+Obj[23] = MES40\carVC.fx
+Obj[24] = MES40\carVC.fx
+Obj[25] = MES40\carVC.fx
+Obj[26] = MES40\bottle.fx
+Obj[27] = MES40\bottle.fx
+Obj[28] = MES40\bottle.fx
+Obj[29] = MES40\TRAIN_05_SDW.fx
+Obj[30] = MES40\carVC.fx
+Obj[31] = MES40\TRAIN_05_SDW.fx
+Obj[32] = MES40\carVC.fx
+Obj[33] = MES40\carVC.fx
+Obj[34] = MES40\carVC.fx
+Obj[35] = MES40\carVC.fx
+Obj[36] = MES40\carVC.fx
+Obj[37] = MES40\carVC.fx
+Obj[38] = MES40\carVC.fx
+Obj[39] = MES40\TRAIN_05_SDW.fx
+Obj[40] = MES40\carVC.fx
+Obj[41] = MES40\TRAIN_05_SDW.fx
+Obj[42] = MES40\carVC.fx
+Obj[43] = MES40\carVC.fx
+Obj[44] = MES40\carVC.fx
+Obj[45] = MES40\carVC.fx
+Obj[46] = MES40\carVC.fx
+
