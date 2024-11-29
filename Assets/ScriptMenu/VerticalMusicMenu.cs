@@ -135,8 +135,9 @@ public class VerticalMusicMenu : MonoBehaviour
             if (i == botones.Length / 2)
             {
                 // Botón seleccionado (centro).
-                textoTMP.color = Color.yellow;
+                textoTMP.color = Color.white;
                 textoTMP.fontSize = 28;
+                SetBotonOpacity(botones[i], 1f);
                 botones[i].transform.localScale = Vector3.one * 1.2f;
                 if (imagenFondo != null) imagenFondo.color = colorBrillante;
 
@@ -146,8 +147,9 @@ public class VerticalMusicMenu : MonoBehaviour
             else
             {
                 // Botones no seleccionados.
-                textoTMP.color = Color.white;
+                textoTMP.color = Color.black;
                 textoTMP.fontSize = 24;
+                SetBotonOpacity(botones[i], 0.5f);
                 botones[i].transform.localScale = Vector3.one;
                 if (imagenFondo != null) imagenFondo.color = colorOscuro;
 
