@@ -87,10 +87,7 @@ public class ControllerReader : MonoBehaviour
         }
 
 
-        //Debug.Log("Left trigger: " + LtriggerVal);
-        //Debug.Log("Right trigger: " + RtriggerVal);
-        //Debug.Log("Left Grip: " + LgripVal);
-        //Debug.Log("Right Grip: " + RgripVal);
+
 
     }
 }

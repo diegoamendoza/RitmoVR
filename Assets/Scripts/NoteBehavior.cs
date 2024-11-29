@@ -9,8 +9,8 @@ public class NoteBehavior : MonoBehaviour
     public void Initialize(NoteData noteData)
     {
         NoteData = noteData;
-
-        // Configuración inicial del Line Renderer
+        Debug.Log(noteData.color);
+        
         if (lineRenderer == null)
         {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
