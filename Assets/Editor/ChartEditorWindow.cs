@@ -1,6 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class ChartEditorWindow : EditorWindow
 {
@@ -8,6 +9,7 @@ public class ChartEditorWindow : EditorWindow
     private float currentTime = 0f;
     private List<Note> notes = new List<Note>();
     private Vector2 gridScrollPos;
+    
 
     private float maxTime = 0f;
     private bool isPlaying = false;
@@ -108,17 +110,24 @@ public class ChartEditorWindow : EditorWindow
                 Note activeNote = notes.Find(n => n.x == x && n.y == y && Mathf.Approximately(n.time, currentTime));
                 Color noteColor = activeNote != null ? GetNoteColor(activeNote.color) : Color.white;
 
+                Note newNote = new Note { x = x, y = y, time = currentTime };
+
                 GUI.backgroundColor = isActive ? noteColor : Color.white;
 
                 if (GUILayout.Button("", GUILayout.Width(30), GUILayout.Height(30)))
                 {
                     if (isActive)
                     {
-                        selectedNotes.Add(activeNote);
+                        GUI.backgroundColor = Color.white;
+                        notes.Remove(activeNote);
+                        selectedNotes.Remove(activeNote);
+                        isActive = false;
+                        activeNote = null;
+                        noteColor = Color.white;
+                        
                     }
                     else
                     {
-                        Note newNote = new Note { x = x, y = y, time = currentTime };
                         notes.Add(newNote);
                         selectedNotes.Add(newNote);
                     }
@@ -155,6 +164,8 @@ public class ChartEditorWindow : EditorWindow
             {
                 DeleteSelectedNotes();
             }
+
+           
         }
     }
 
@@ -186,6 +197,8 @@ public class ChartEditorWindow : EditorWindow
 
             Repaint();
         }
+
+        selectedNotes.Clear();
     }
 
 
