@@ -9,7 +9,8 @@ public class ChartEditorWindow : EditorWindow
     private float currentTime = 0f;
     private List<Note> notes = new List<Note>();
     private Vector2 gridScrollPos;
-    
+    private Vector2 notesScrollPos;
+
 
     private float maxTime = 0f;
     private bool isPlaying = false;
@@ -30,9 +31,9 @@ public class ChartEditorWindow : EditorWindow
         DrawAudioClipField();
         if (audioClip != null)
         {
+            DrawPlaybackControls();
             DrawTimeline();
             DrawGrid();
-            DrawPlaybackControls();
             DrawSelectedNotesControls();
         }
     }
@@ -124,7 +125,7 @@ public class ChartEditorWindow : EditorWindow
                         isActive = false;
                         activeNote = null;
                         noteColor = Color.white;
-                        
+
                     }
                     else
                     {
@@ -142,18 +143,14 @@ public class ChartEditorWindow : EditorWindow
 
     private void DrawSelectedNotesControls()
     {
+        EditorGUILayout.LabelField("Selected Notes", EditorStyles.boldLabel);
+        notesScrollPos = GUILayout.BeginScrollView(notesScrollPos, GUILayout.Width(400), GUILayout.Height(400));
         if (selectedNotes.Count > 0)
         {
-            EditorGUILayout.LabelField("Selected Notes", EditorStyles.boldLabel);
 
             sequenceDuration = EditorGUILayout.FloatField("Sequence Duration (s):", sequenceDuration);
 
-            foreach (var note in selectedNotes)
-            {
-                note.order = EditorGUILayout.IntField("Order:", note.order);
-                note.hand = (NoteHand)EditorGUILayout.EnumPopup("Hand:", note.hand);
-                note.color = (NoteColor)EditorGUILayout.EnumPopup("Color:", note.color);
-            }
+
 
             if (GUILayout.Button("Distribute Notes"))
             {
@@ -164,9 +161,17 @@ public class ChartEditorWindow : EditorWindow
             {
                 DeleteSelectedNotes();
             }
+            foreach (var note in selectedNotes)
+            {
+                EditorGUILayout.LabelField("Note", EditorStyles.boldLabel);
+                note.order = EditorGUILayout.IntField("Order:", note.order);
+                note.hand = (NoteHand)EditorGUILayout.EnumPopup("Hand:", note.hand);
+                note.color = (NoteColor)EditorGUILayout.EnumPopup("Color:", note.color);
+            }
 
-           
         }
+        GUI.backgroundColor = Color.white;
+        EditorGUILayout.EndScrollView();
     }
 
     private void DistributeSelectedNotes()
