@@ -111,7 +111,7 @@ public class ChartEditorWindow : EditorWindow
                 Note activeNote = notes.Find(n => n.x == x && n.y == y && Mathf.Approximately(n.time, currentTime));
                 Color noteColor = activeNote != null ? GetNoteColor(activeNote.color) : Color.white;
 
-                Note newNote = new Note { x = x, y = y, time = currentTime };
+                Note newNote = new Note { x = x, y = y, time = Mathf.Floor(currentTime * 1000) / 1000 };
 
                 GUI.backgroundColor = isActive ? noteColor : Color.white;
 
