@@ -6,6 +6,9 @@ using System.Collections;
 public class VerticalMusicMenu : MonoBehaviour
 {
     public Button[] botones; // Array de botones, deben estar en el orden lógico.
+    public Button botonArriba; // Botón para mover hacia arriba.
+    public Button botonAbajo; // Botón para mover hacia abajo.
+    public Image[] imagenesAsociadas; // Array de imágenes asociadas a cada botón.
     public float desplazamiento = 100f; // Distancia entre los botones en el eje Y.
     private int indiceSeleccionado = 0; // El índice del botón "fijo" al centro.
     public Color colorOscuro = new Color(0.3f, 0.3f, 0.3f); // Color para botones no seleccionados.
@@ -16,21 +19,26 @@ public class VerticalMusicMenu : MonoBehaviour
 
     void Start()
     {
-        posicionesOriginales = new Vector3[botones.Length]; // Inicializamos el array de posiciones.
+        // Validar que cada botón tenga una imagen asociada.
+        if (botones.Length != imagenesAsociadas.Length)
+        {
+            Debug.LogError("El número de botones no coincide con el número de imágenes asociadas.");
+            return;
+        }
+
+        // Almacena las posiciones originales y organiza los botones.
+        posicionesOriginales = new Vector3[botones.Length];
         OrganizarBotones();
         ActualizarVisual();
-    }
 
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.DownArrow) && !enAnimacion)
-        {
-            MoverBotones(1); // Desplazar botones hacia abajo.
-        }
-        else if (Input.GetKeyDown(KeyCode.UpArrow) && !enAnimacion)
-        {
-            MoverBotones(-1); // Desplazar botones hacia arriba.
-        }
+        // Conecta los botones interactivos con sus acciones.
+        botonArriba.onClick.AddListener(() => {
+            if (!enAnimacion) MoverBotones(-1); // Mover hacia arriba.
+        });
+
+        botonAbajo.onClick.AddListener(() => {
+            if (!enAnimacion) MoverBotones(1); // Mover hacia abajo.
+        });
     }
 
     void MoverBotones(int direccion)
@@ -40,28 +48,33 @@ public class VerticalMusicMenu : MonoBehaviour
         {
             // Mover el primer botón al final.
             Button botonTemp = botones[0];
+            Image imagenTemp = imagenesAsociadas[0];
             for (int i = 0; i < botones.Length - 1; i++)
             {
                 botones[i] = botones[i + 1];
+                imagenesAsociadas[i] = imagenesAsociadas[i + 1];
             }
             botones[botones.Length - 1] = botonTemp;
+            imagenesAsociadas[imagenesAsociadas.Length - 1] = imagenTemp;
         }
         else
         {
             // Mover el último botón al principio.
             Button botonTemp = botones[botones.Length - 1];
+            Image imagenTemp = imagenesAsociadas[imagenesAsociadas.Length - 1];
             for (int i = botones.Length - 1; i > 0; i--)
             {
                 botones[i] = botones[i - 1];
+                imagenesAsociadas[i] = imagenesAsociadas[i - 1];
             }
             botones[0] = botonTemp;
+            imagenesAsociadas[0] = imagenTemp;
         }
 
         // Reorganizar las posiciones visuales de todos los botones simultáneamente.
         StartCoroutine(AnimarDesplazamiento());
     }
 
-    // Método para animar el desplazamiento de los botones
     IEnumerator AnimarDesplazamiento()
     {
         enAnimacion = true;
@@ -103,23 +116,15 @@ public class VerticalMusicMenu : MonoBehaviour
         enAnimacion = false; // Finaliza la animación.
     }
 
-    // Organiza los botones en su posición original
     void OrganizarBotones()
     {
-        // Guardamos las posiciones originales para animarlas.
         for (int i = 0; i < botones.Length; i++)
         {
             posicionesOriginales[i] = new Vector3(0, desplazamiento * (i - botones.Length / 2), 0);
-        }
-
-        // Colocar los botones en sus posiciones correspondientes (arriba, centro, abajo).
-        for (int i = 0; i < botones.Length; i++)
-        {
             botones[i].transform.localPosition = posicionesOriginales[i];
         }
     }
 
-    // Actualiza la visual de los botones
     void ActualizarVisual()
     {
         for (int i = 0; i < botones.Length; i++)
@@ -135,8 +140,8 @@ public class VerticalMusicMenu : MonoBehaviour
                 botones[i].transform.localScale = Vector3.one * 1.2f;
                 if (imagenFondo != null) imagenFondo.color = colorBrillante;
 
-                // Mantener la opacidad en 1 mientras está seleccionado.
-                SetBotonOpacity(botones[i], 1f);
+                // Mostrar la imagen asociada.
+                imagenesAsociadas[i].gameObject.SetActive(true);
             }
             else
             {
@@ -146,13 +151,21 @@ public class VerticalMusicMenu : MonoBehaviour
                 botones[i].transform.localScale = Vector3.one;
                 if (imagenFondo != null) imagenFondo.color = colorOscuro;
 
-                // Reducir la opacidad de los botones no seleccionados.
-                SetBotonOpacity(botones[i], 0.5f);
+                // Ocultar la imagen asociada.
+                imagenesAsociadas[i].gameObject.SetActive(false);
             }
         }
     }
 
-    // Método para ajustar la opacidad de los botones
+    void ActualizarOpacidadDuranteAnimacion(float opacity)
+    {
+        for (int i = 0; i < botones.Length; i++)
+        {
+            if (i == botones.Length / 2) SetBotonOpacity(botones[i], 0.5f);
+            else SetBotonOpacity(botones[i], opacity);
+        }
+    }
+
     void SetBotonOpacity(Button boton, float opacity)
     {
         var imagenFondo = boton.GetComponent<Image>();
@@ -169,23 +182,6 @@ public class VerticalMusicMenu : MonoBehaviour
             var colorTexto = textoTMP.color;
             colorTexto.a = opacity;
             textoTMP.color = colorTexto;
-        }
-    }
-
-    // Método para cambiar la opacidad de todos los botones durante la animación
-    void ActualizarOpacidadDuranteAnimacion(float opacity)
-    {
-        // Cambiar la opacidad de todos los botones durante la animación (excepto el botón central que tendrá opacidad 0.5f temporalmente).
-        for (int i = 0; i < botones.Length; i++)
-        {
-            if (i == botones.Length / 2) // El botón central
-            {
-                SetBotonOpacity(botones[i], 0.5f); // Durante la animación, el botón seleccionado se opacifica
-            }
-            else
-            {
-                SetBotonOpacity(botones[i], opacity); // Los otros botones tienen la opacidad reducida
-            }
         }
     }
 }
