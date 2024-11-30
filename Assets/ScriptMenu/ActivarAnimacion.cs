@@ -1,37 +1,36 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ActivarAnimacion : MonoBehaviour
+public class ActivarContenedorYDesactivarBoton : MonoBehaviour
 {
     public Button boton; // Referencia al botón en la UI.
-    public Animator animator; // Referencia al Animator que controla la animación.
-    public string nombreTriggerAnimacion; // Nombre del Trigger en el Animator.
+    public GameObject contenedor; // Referencia al objeto que se activará o desactivará.
 
     void Start()
     {
         // Verificar que las referencias estén asignadas correctamente.
-        if (boton == null || animator == null || string.IsNullOrEmpty(nombreTriggerAnimacion))
+        if (boton == null || contenedor == null)
         {
-            Debug.LogError("Faltan referencias en el script. Asegúrate de asignar el botón, el Animator y el nombre del Trigger.");
+            Debug.LogError("Faltan referencias en el script. Asegúrate de asignar el botón y el objeto contenedor.");
             return;
         }
 
-        // Añadir el listener al botón para activar la animación al ser presionado.
-        boton.onClick.AddListener(ActivarAnimacionYDesactivar);
+        // Añadir el listener al botón para alternar la activación del contenedor.
+        boton.onClick.AddListener(ToggleContenedorYDesactivarBoton);
     }
 
-    void ActivarAnimacionYDesactivar()
+    void ToggleContenedorYDesactivarBoton()
     {
-        // Activar el Trigger en el Animator.
-        animator.SetTrigger(nombreTriggerAnimacion);
+        // Alternar el estado activo del objeto contenedor.
+        contenedor.SetActive(!contenedor.activeSelf);
 
-        // Desactivar completamente el objeto del botón después de activar la animación.
+        // Desactivar el botón después de presionarlo.
         boton.gameObject.SetActive(false);
     }
 
     void OnDestroy()
     {
         // Eliminar el listener para evitar errores si el objeto se destruye.
-        boton.onClick.RemoveListener(ActivarAnimacionYDesactivar);
+        boton.onClick.RemoveListener(ToggleContenedorYDesactivarBoton);
     }
 }
