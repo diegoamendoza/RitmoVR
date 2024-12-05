@@ -8,6 +8,7 @@ public class VerticalMusicMenu : MonoBehaviour
     public Button[] botones; // Array de botones, deben estar en el orden lógico.
     public Button botonArriba; // Botón para mover hacia arriba.
     public Button botonAbajo; // Botón para mover hacia abajo.
+    public Button botonActivar; // Botón específico que activará las imágenes.
     public Image[] imagenesAsociadas; // Array de imágenes asociadas a cada botón.
     public float desplazamiento = 100f; // Distancia entre los botones en el eje Y.
     private int indiceSeleccionado = 0; // El índice del botón "fijo" al centro.
@@ -16,6 +17,7 @@ public class VerticalMusicMenu : MonoBehaviour
     public float tiempoAnimacion = 0.5f; // Tiempo de animación para el desplazamiento.
     private Vector3[] posicionesOriginales; // Para almacenar las posiciones originales de los botones.
     private bool enAnimacion = false; // Flag para saber si está en animación.
+    private bool imagenesHabilitadas = false; // Flag para saber si las imágenes están habilitadas.
 
     void Start()
     {
@@ -33,12 +35,36 @@ public class VerticalMusicMenu : MonoBehaviour
 
         // Conecta los botones interactivos con sus acciones.
         botonArriba.onClick.AddListener(() => {
-            if (!enAnimacion) MoverBotones(-1); // Mover hacia arriba.
+            if (!enAnimacion && imagenesHabilitadas) MoverBotones(-1); // Mover hacia arriba.
         });
 
         botonAbajo.onClick.AddListener(() => {
-            if (!enAnimacion) MoverBotones(1); // Mover hacia abajo.
+            if (!enAnimacion && imagenesHabilitadas) MoverBotones(1); // Mover hacia abajo.
         });
+
+        // Conectar el botón que habilitará las imágenes.
+        if (botonActivar != null)
+        {
+            botonActivar.onClick.AddListener(ActivarImagenes);
+        }
+
+        // Asegurarse de que las imágenes estén desactivadas al inicio.
+        DesactivarTodasLasImagenes();
+    }
+
+    void ActivarImagenes()
+    {
+        imagenesHabilitadas = true;
+        ActualizarVisual(); // Actualizar visualmente ahora que las imágenes están habilitadas.
+        botonActivar.gameObject.SetActive(false); // Desactivar el botón de activación.
+    }
+
+    void DesactivarTodasLasImagenes()
+    {
+        foreach (var imagen in imagenesAsociadas)
+        {
+            imagen.gameObject.SetActive(false);
+        }
     }
 
     void MoverBotones(int direccion)
@@ -135,20 +161,25 @@ public class VerticalMusicMenu : MonoBehaviour
             if (i == botones.Length / 2)
             {
                 // Botón seleccionado (centro).
-                textoTMP.color = Color.yellow;
-                textoTMP.fontSize = 28;
-                botones[i].transform.localScale = Vector3.one * 1.2f;
+                textoTMP.color = Color.black;
+                textoTMP.fontSize = 10;
+                SetBotonOpacity(botones[i], 1f);
+                botones[i].transform.localScale = Vector3.one * 1.7f;
                 if (imagenFondo != null) imagenFondo.color = colorBrillante;
 
-                // Mostrar la imagen asociada.
-                imagenesAsociadas[i].gameObject.SetActive(true);
+                // Mostrar la imagen asociada si están habilitadas.
+                if (imagenesHabilitadas)
+                {
+                    imagenesAsociadas[i].gameObject.SetActive(true);
+                }
             }
             else
             {
                 // Botones no seleccionados.
                 textoTMP.color = Color.white;
-                textoTMP.fontSize = 24;
-                botones[i].transform.localScale = Vector3.one;
+                textoTMP.fontSize = 7;
+                SetBotonOpacity(botones[i], 0.5f);
+                botones[i].transform.localScale = Vector3.one * 1.2f;
                 if (imagenFondo != null) imagenFondo.color = colorOscuro;
 
                 // Ocultar la imagen asociada.
