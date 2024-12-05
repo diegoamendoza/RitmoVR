@@ -86,7 +86,7 @@ public class Spawneer : MonoBehaviour
         if (prefab == null) return;
 
         Vector3 position = new Vector3(note.x, note.y, 0);
-        GameObject spawnedNote = Instantiate(prefab, position, Quaternion.identity, spawnParent);
+        GameObject spawnedNote = Instantiate(prefab, position + spawnParent.position, Quaternion.identity, spawnParent);
         spawnedNotes.Add(spawnedNote);
 
         var noteBehavior = spawnedNote.GetComponent<NoteBehavior>();
