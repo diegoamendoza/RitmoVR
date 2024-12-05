@@ -57,15 +57,19 @@ public class ControllerReader : MonoBehaviour
         {
             case 0:
                 m_LRenderer.material = m_LMaterial[0];
+                m_LRenderer.gameObject.tag = "Untagged";
                 break;
             case 0.5f:
                 m_LRenderer.material = m_LMaterial[1];
+                m_LRenderer.gameObject.tag = "Red";
                 break;
             case 1:
                 m_LRenderer.material = m_LMaterial[2];
+                m_LRenderer.gameObject.tag = "Blue";
                 break;
             case 1.5f:
                 m_LRenderer.material = m_LMaterial[3];
+                m_LRenderer.gameObject.tag = "Purple";
                 break;
         }
 
@@ -73,15 +77,19 @@ public class ControllerReader : MonoBehaviour
         {
             case 0:
                 m_RRenderer.material = m_RMaterial[0];
+                m_RRenderer.gameObject.tag = "Untagged";
                 break;
             case 0.5f:
                 m_RRenderer.material = m_RMaterial[1];
+                m_RRenderer.gameObject.tag = "Red";
                 break;
             case 1:
                 m_RRenderer.material = m_RMaterial[2];
+                m_RRenderer.gameObject.tag = "Blue";
                 break;
             case 1.5f:
                 m_RRenderer.material = m_RMaterial[3];
+                m_RRenderer.gameObject.tag = "Purple";
                 break;
 
         }

@@ -3,8 +3,8 @@ using UnityEngine;
 public class NoteBehavior : MonoBehaviour
 {
     public LineRenderer lineRenderer;
-
-    public NoteData NoteData { get; private set; }
+    [SerializeField]
+    public NoteData NoteData { get; set; }
 
     // Velocidad de movimiento de las notas
     public float moveSpeed = 5f;
@@ -47,5 +47,42 @@ public class NoteBehavior : MonoBehaviour
     {
         // Mueve la nota continuamente hacia adelante
         transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch(NoteData.color)
+        {
+            case 0:
+                if(other.CompareTag("Red"))
+                {
+                    Debug.Log("Nice red");
+                }
+                else
+                {
+                    Debug.Log("Fail");
+                }
+                break;
+            case 1:
+                if(other.CompareTag("Blue"))
+                {
+                    Debug.Log("Nice");
+                }
+                else
+                {
+                    Debug.Log("Fail");
+                }
+                break;
+            case 2:
+                if(other.CompareTag("Purple"))
+                {
+                    Debug.Log("Nice purple");
+                }
+                else
+                {
+                    Debug.Log("Fail");
+                }
+                break;
+        }
     }
 }
