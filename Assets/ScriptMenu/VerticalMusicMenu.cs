@@ -10,6 +10,7 @@ public class VerticalMusicMenu : MonoBehaviour
     public Button botonAbajo; // Botón para mover hacia abajo.
     public Button botonActivar; // Botón específico que activará las imágenes.
     public Image[] imagenesAsociadas; // Array de imágenes asociadas a cada botón.
+    public GameObject[] bordes; // Array de bordes asociados a cada botón.
     public float desplazamiento = 100f; // Distancia entre los botones en el eje Y.
     private int indiceSeleccionado = 0; // El índice del botón "fijo" al centro.
     public Color colorOscuro = new Color(0.3f, 0.3f, 0.3f); // Color para botones no seleccionados.
@@ -21,10 +22,10 @@ public class VerticalMusicMenu : MonoBehaviour
 
     void Start()
     {
-        // Validar que cada botón tenga una imagen asociada.
-        if (botones.Length != imagenesAsociadas.Length)
+        // Validar que cada botón tenga una imagen y un borde asociado.
+        if (botones.Length != imagenesAsociadas.Length || botones.Length != bordes.Length)
         {
-            Debug.LogError("El número de botones no coincide con el número de imágenes asociadas.");
+            Debug.LogError("El número de botones no coincide con el número de imágenes o bordes asociados.");
             return;
         }
 
@@ -48,8 +49,9 @@ public class VerticalMusicMenu : MonoBehaviour
             botonActivar.onClick.AddListener(ActivarImagenes);
         }
 
-        // Asegurarse de que las imágenes estén desactivadas al inicio.
+        // Asegurarse de que las imágenes y bordes estén desactivados al inicio.
         DesactivarTodasLasImagenes();
+        DesactivarTodosLosBordes();
     }
 
     void ActivarImagenes()
@@ -67,6 +69,14 @@ public class VerticalMusicMenu : MonoBehaviour
         }
     }
 
+    void DesactivarTodosLosBordes()
+    {
+        foreach (var borde in bordes)
+        {
+            borde.SetActive(false);
+        }
+    }
+
     void MoverBotones(int direccion)
     {
         // Movimiento cíclico: reordenar botones.
@@ -75,26 +85,32 @@ public class VerticalMusicMenu : MonoBehaviour
             // Mover el primer botón al final.
             Button botonTemp = botones[0];
             Image imagenTemp = imagenesAsociadas[0];
+            GameObject bordeTemp = bordes[0];
             for (int i = 0; i < botones.Length - 1; i++)
             {
                 botones[i] = botones[i + 1];
                 imagenesAsociadas[i] = imagenesAsociadas[i + 1];
+                bordes[i] = bordes[i + 1];
             }
             botones[botones.Length - 1] = botonTemp;
             imagenesAsociadas[imagenesAsociadas.Length - 1] = imagenTemp;
+            bordes[bordes.Length - 1] = bordeTemp;
         }
         else
         {
             // Mover el último botón al principio.
             Button botonTemp = botones[botones.Length - 1];
             Image imagenTemp = imagenesAsociadas[imagenesAsociadas.Length - 1];
+            GameObject bordeTemp = bordes[bordes.Length - 1];
             for (int i = botones.Length - 1; i > 0; i--)
             {
                 botones[i] = botones[i - 1];
                 imagenesAsociadas[i] = imagenesAsociadas[i - 1];
+                bordes[i] = bordes[i - 1];
             }
             botones[0] = botonTemp;
             imagenesAsociadas[0] = imagenTemp;
+            bordes[0] = bordeTemp;
         }
 
         // Reorganizar las posiciones visuales de todos los botones simultáneamente.
@@ -153,6 +169,8 @@ public class VerticalMusicMenu : MonoBehaviour
 
     void ActualizarVisual()
     {
+        DesactivarTodosLosBordes();
+
         for (int i = 0; i < botones.Length; i++)
         {
             var textoTMP = botones[i].GetComponentInChildren<TextMeshProUGUI>();
@@ -167,10 +185,11 @@ public class VerticalMusicMenu : MonoBehaviour
                 botones[i].transform.localScale = Vector3.one * 1.7f;
                 if (imagenFondo != null) imagenFondo.color = colorBrillante;
 
-                // Mostrar la imagen asociada si están habilitadas.
+                // Mostrar la imagen y el borde asociados si están habilitados.
                 if (imagenesHabilitadas)
                 {
                     imagenesAsociadas[i].gameObject.SetActive(true);
+                    bordes[i].SetActive(true);
                 }
             }
             else
@@ -179,7 +198,7 @@ public class VerticalMusicMenu : MonoBehaviour
                 textoTMP.color = Color.white;
                 textoTMP.fontSize = 7;
                 SetBotonOpacity(botones[i], 0.5f);
-                botones[i].transform.localScale = Vector3.one * 1.2f;
+                botones[i].transform.localScale = Vector3.one * 1.5f;
                 if (imagenFondo != null) imagenFondo.color = colorOscuro;
 
                 // Ocultar la imagen asociada.
