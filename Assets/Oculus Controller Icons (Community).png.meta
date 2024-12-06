@@ -1,0 +1,496 @@
+fileFormatVersion: 2
+guid: 874aed198271bc94a9ef89a58751f33c
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_2
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 722
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9ef3e72334ac3148b8230e73fa90e3b
+      internalID: 1917890055
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_3
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 625
+        width: 90
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b6fffa730efdc469f793d4eb7176a4
+      internalID: 2126504684
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_4
+      rect:
+        serializedVersion: 2
+        x: 635
+        y: 625
+        width: 90
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4393fe6d942758c4ea47b7864955c3af
+      internalID: 616757231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_7
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 625
+        width: 90
+        height: 118
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8e66e2ebd82e2194c88100647b21f0f7
+      internalID: 961012254
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_9
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 625
+        width: 90
+        height: 108
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a16224f735e3fd4ba4cbb6ce7150a27
+      internalID: 1237805347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_11
+      rect:
+        serializedVersion: 2
+        x: 1464
+        y: 722
+        width: 33
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5227837ec4ddd37488abb4b79a5b0106
+      internalID: 1602737252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_24
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 444
+        width: 132
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8afc5bf915d9f4c4483c0555abf1f906
+      internalID: 34074935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_26
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 444
+        width: 132
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e2f37beb9313484db0e74ebdebe896d
+      internalID: -87904876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_30
+      rect:
+        serializedVersion: 2
+        x: 1014
+        y: 445
+        width: 132
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b3515a5755b1194ba43014b4951af9d
+      internalID: 297421042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_33
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 445
+        width: 132
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49b520768b013cf4caa5b287fa5d7656
+      internalID: 2111480463
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_58
+      rect:
+        serializedVersion: 2
+        x: 1240
+        y: 235
+        width: 80
+        height: 90
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 993cd47b3adf20546bc5770969c2e28f
+      internalID: -1356748114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_61
+      rect:
+        serializedVersion: 2
+        x: 1630
+        y: 230
+        width: 100
+        height: 100
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae36fe08fac42ac45ba4b5688f1491b6
+      internalID: 1984112340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_64
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 264
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d82dcd9ba920784fa7c1a6b8a0b915c
+      internalID: 1963646289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Oculus Controller Icons (Community)_65
+      rect:
+        serializedVersion: 2
+        x: 1737
+        y: 264
+        width: 21
+        height: 33
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6d5d2c7695921d46b827599aaf6e2c0
+      internalID: -1116266037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 172ec88e3c78ec64c947b2653c90e664
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Oculus Controller Icons (Community)_0: -128224554
+      Oculus Controller Icons (Community)_1: -157366114
+      Oculus Controller Icons (Community)_10: -688804061
+      Oculus Controller Icons (Community)_11: 1602737252
+      Oculus Controller Icons (Community)_12: 595387249
+      Oculus Controller Icons (Community)_13: 723801569
+      Oculus Controller Icons (Community)_14: 2013087208
+      Oculus Controller Icons (Community)_15: 1932458129
+      Oculus Controller Icons (Community)_16: -821324960
+      Oculus Controller Icons (Community)_17: 1053673367
+      Oculus Controller Icons (Community)_18: 971812956
+      Oculus Controller Icons (Community)_19: 341306666
+      Oculus Controller Icons (Community)_2: 1917890055
+      Oculus Controller Icons (Community)_20: -1654394054
+      Oculus Controller Icons (Community)_21: -1179435536
+      Oculus Controller Icons (Community)_22: -2124703157
+      Oculus Controller Icons (Community)_23: -2135185745
+      Oculus Controller Icons (Community)_24: 34074935
+      Oculus Controller Icons (Community)_25: -1420508799
+      Oculus Controller Icons (Community)_26: -87904876
+      Oculus Controller Icons (Community)_27: -449790217
+      Oculus Controller Icons (Community)_28: 2047778683
+      Oculus Controller Icons (Community)_29: 1175066585
+      Oculus Controller Icons (Community)_3: 2126504684
+      Oculus Controller Icons (Community)_30: 297421042
+      Oculus Controller Icons (Community)_31: -387886331
+      Oculus Controller Icons (Community)_32: 380667105
+      Oculus Controller Icons (Community)_33: 2111480463
+      Oculus Controller Icons (Community)_34: 1813625983
+      Oculus Controller Icons (Community)_35: 194737448
+      Oculus Controller Icons (Community)_36: 1817957847
+      Oculus Controller Icons (Community)_37: -957585637
+      Oculus Controller Icons (Community)_38: 477335094
+      Oculus Controller Icons (Community)_39: -1719572926
+      Oculus Controller Icons (Community)_4: 616757231
+      Oculus Controller Icons (Community)_40: 1382580949
+      Oculus Controller Icons (Community)_41: 546278809
+      Oculus Controller Icons (Community)_42: 1055883081
+      Oculus Controller Icons (Community)_43: 1118544652
+      Oculus Controller Icons (Community)_44: -915338471
+      Oculus Controller Icons (Community)_45: 943358111
+      Oculus Controller Icons (Community)_46: 660685952
+      Oculus Controller Icons (Community)_47: 929808151
+      Oculus Controller Icons (Community)_48: -2096242804
+      Oculus Controller Icons (Community)_49: 94518664
+      Oculus Controller Icons (Community)_5: -862965770
+      Oculus Controller Icons (Community)_50: -749232383
+      Oculus Controller Icons (Community)_51: -103611668
+      Oculus Controller Icons (Community)_52: 1373743311
+      Oculus Controller Icons (Community)_53: -263708329
+      Oculus Controller Icons (Community)_54: -1388077589
+      Oculus Controller Icons (Community)_55: 1314732391
+      Oculus Controller Icons (Community)_56: 2049823202
+      Oculus Controller Icons (Community)_57: -1762724200
+      Oculus Controller Icons (Community)_58: -1356748114
+      Oculus Controller Icons (Community)_59: 1614305133
+      Oculus Controller Icons (Community)_6: 913484487
+      Oculus Controller Icons (Community)_60: 237694533
+      Oculus Controller Icons (Community)_61: 1984112340
+      Oculus Controller Icons (Community)_62: 948909214
+      Oculus Controller Icons (Community)_63: 275331686
+      Oculus Controller Icons (Community)_64: 1963646289
+      Oculus Controller Icons (Community)_65: -1116266037
+      Oculus Controller Icons (Community)_66: -1515640938
+      Oculus Controller Icons (Community)_67: -1417447777
+      Oculus Controller Icons (Community)_68: 1374867010
+      Oculus Controller Icons (Community)_69: -1304042267
+      Oculus Controller Icons (Community)_7: 961012254
+      Oculus Controller Icons (Community)_70: -1010721061
+      Oculus Controller Icons (Community)_71: -648076633
+      Oculus Controller Icons (Community)_72: 1507736688
+      Oculus Controller Icons (Community)_73: -1612671551
+      Oculus Controller Icons (Community)_74: 1411563678
+      Oculus Controller Icons (Community)_75: -858284473
+      Oculus Controller Icons (Community)_76: -942091037
+      Oculus Controller Icons (Community)_77: 1448958464
+      Oculus Controller Icons (Community)_78: 1222798809
+      Oculus Controller Icons (Community)_79: -429853110
+      Oculus Controller Icons (Community)_8: -404856912
+      Oculus Controller Icons (Community)_80: 1919879323
+      Oculus Controller Icons (Community)_81: 709358328
+      Oculus Controller Icons (Community)_82: -1101663795
+      Oculus Controller Icons (Community)_83: 77778046
+      Oculus Controller Icons (Community)_84: -143429311
+      Oculus Controller Icons (Community)_85: -851034481
+      Oculus Controller Icons (Community)_86: -193889473
+      Oculus Controller Icons (Community)_87: 816015177
+      Oculus Controller Icons (Community)_9: 1237805347
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

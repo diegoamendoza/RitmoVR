@@ -3,14 +3,25 @@ using UnityEngine;
 public class NoteBehavior : MonoBehaviour
 {
     public LineRenderer lineRenderer;
+    [SerializeField]
+    public NoteData NoteData { get; set; }
 
-    public NoteData NoteData { get; private set; }
+    // Velocidad de movimiento de las notas
+    public float moveSpeed = 5f;
+
+    // Dirección en la que se moverán las notas
+    private Vector3 moveDirection = Vector3.forward;
+
+    private void Update()
+    {
+        MoveNote();
+    }
 
     public void Initialize(NoteData noteData)
     {
         NoteData = noteData;
+        Debug.Log(noteData.color);
 
-        // Configuración inicial del Line Renderer
         if (lineRenderer == null)
         {
             lineRenderer = gameObject.AddComponent<LineRenderer>();
@@ -22,13 +33,54 @@ public class NoteBehavior : MonoBehaviour
         }
     }
 
-    public void ConnectTo(Vector3 targetPosition)
+
+
+    private void MoveNote()
     {
-        if (lineRenderer != null)
+        // Mueve la nota continuamente hacia adelante
+        transform.Translate(moveDirection * moveSpeed * Time.deltaTime);
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        switch(NoteData.color)
         {
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, targetPosition);
+            case 0:
+                if(other.CompareTag("Red"))
+                {
+                    Debug.Log("Nice red");
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.Log("Fail");
+                    
+                }
+                break;
+            case 1:
+                if(other.CompareTag("Blue"))
+                {
+                    Debug.Log("Nice");
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    Debug.Log("Fail");
+                  
+                }
+                break;
+            case 2:
+                if(other.CompareTag("Purple"))
+                {
+                    Debug.Log("Nice purple");
+                    Destroy(gameObject);
+                    
+                }
+                else
+                {
+                    Debug.Log("Fail");
+                }
+                break;
         }
     }
 }
