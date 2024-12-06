@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
 using System.IO;
+using System.Collections;
 
 public class Spawneer : MonoBehaviour
 {
@@ -35,18 +36,20 @@ public class Spawneer : MonoBehaviour
         LoadNotesFromJson(); // Cargar las notas al inicio
 
 
-        Play();
+            
+        StartCoroutine(WaitForDelay());
     }
 
     private void Update()
     {
         if (isPlaying)
         {
-            currentTime = audioSource.time;
+            
+            currentTime += Time.deltaTime;
 
             foreach (var note in notes)
             {
-                if (!note.isSpawned && currentTime >= note.time - delay)
+                if (!note.isSpawned && currentTime >= note.time)
                 {
                     SpawnNote(note);
                     note.isSpawned = true;
@@ -63,8 +66,15 @@ public class Spawneer : MonoBehaviour
         if (audioSource.clip != null)
         {
             audioSource.Play();
-            isPlaying = true;
         }
+    }
+
+    IEnumerator WaitForDelay()
+    {
+        isPlaying = true;
+        yield return new WaitForSeconds(delay);
+        Play();
+        
     }
 
     public void Pause()

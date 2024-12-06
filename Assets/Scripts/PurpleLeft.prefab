@@ -121,7 +121,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 5050609447870084767, guid: 4699cbb9ba7b4a64ba2adf7fa2296651,
     type: 3}
-  moveSpeed: 15
+  moveSpeed: 20
 --- !u!120 &-3861776335212996318
 LineRenderer:
   serializedVersion: 2

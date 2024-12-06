@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineRenderer: {fileID: 5050609447870084767}
-  moveSpeed: 15
+  moveSpeed: 20
 --- !u!120 &5050609447870084767
 LineRenderer:
   serializedVersion: 2

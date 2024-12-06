@@ -1,0 +1,74 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!181963792 &2655988077585873504
+Preset:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: asdas
+  m_TargetType:
+    m_NativeTypeID: 114
+    m_ManagedTypePPtr: {fileID: 11500000, guid: f10265c34eec58d4daa90da6e24e66ea,
+      type: 3}
+    m_ManagedTypeFallback: 
+  m_Properties:
+  - target: {fileID: 0}
+    propertyPath: m_Enabled
+    value: 1
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorHideFlags
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: m_EditorClassIdentifier
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: audioClip
+    value: 
+    objectReference: {fileID: 8300000, guid: bfb9e0339865fb04da11b6fd2e78f73c, type: 3}
+  - target: {fileID: 0}
+    propertyPath: delay
+    value: 0
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: notesJsonPath
+    value: Assets/chart/LukaLuka.json
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: spawnParent
+    value: 
+    objectReference: {fileID: 0}
+  - target: {fileID: 0}
+    propertyPath: redLeftPrefab
+    value: 
+    objectReference: {fileID: 5039807569579797499, guid: 4699cbb9ba7b4a64ba2adf7fa2296651,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: redRightPrefab
+    value: 
+    objectReference: {fileID: 881915129364280284, guid: cef120c28afb7fc4c9c7740229b61068,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: blueLeftPrefab
+    value: 
+    objectReference: {fileID: 7279778960111643114, guid: bca1708736346d44fa1f220dd78720aa,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: blueRightPrefab
+    value: 
+    objectReference: {fileID: 7542503700111631095, guid: 969d1859dd10024459d38517426eb2df,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: purpleLeftPrefab
+    value: 
+    objectReference: {fileID: 4008479222615939420, guid: 1f0024e6d76442c4cbae791ac12abc37,
+      type: 3}
+  - target: {fileID: 0}
+    propertyPath: purpleRightPrefab
+    value: 
+    objectReference: {fileID: 5660512241637620724, guid: fac5df282fdb73243a746dc1a5a427cb,
+      type: 3}
+  m_ExcludedProperties: []
