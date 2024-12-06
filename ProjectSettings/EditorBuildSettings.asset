@@ -11,6 +11,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/ScriptMenu/UI/Sci-Fi UI/Demo.unity
     guid: 13070929f2d2dc3468bb951653444db6
+  - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: ed6dd00a6158f8848ab9365b1e4af610
   m_configObjects:
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: 8ae827e431b22734a821216ebb245654,
       type: 2}
