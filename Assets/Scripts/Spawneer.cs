@@ -138,7 +138,7 @@ public class Spawneer : MonoBehaviour
                     next.NoteData.hand == current.NoteData.hand)
                 {
                     // Conectar la nota actual con la siguiente
-                    current.ConnectTo(next.transform.position);
+                    
                 }
             }
         }

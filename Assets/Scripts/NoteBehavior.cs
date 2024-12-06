@@ -33,15 +33,7 @@ public class NoteBehavior : MonoBehaviour
         }
     }
 
-    public void ConnectTo(Vector3 targetPosition)
-    {
-        if (lineRenderer != null)
-        {
-            lineRenderer.enabled = true;
-            lineRenderer.SetPosition(0, transform.position);
-            lineRenderer.SetPosition(1, targetPosition);
-        }
-    }
+
 
     private void MoveNote()
     {
