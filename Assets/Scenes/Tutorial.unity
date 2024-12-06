@@ -2134,7 +2134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: dc75fca6ebb85da4dbe202927ce463f9, type: 3}
   delay: 0.8
-  notesJsonPath: Assets/chart/prueba.json
+  notesJsonPath: Assets/AssetsPropios/chart/prueba.json
   spawnParent: {fileID: 1250737914}
   redLeftPrefab: {fileID: 1924554034211727771, guid: 3519298e03a2f3b4582dfa8c639b8969,
     type: 3}
