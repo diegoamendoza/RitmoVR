@@ -7,16 +7,16 @@ public class CambiarEscena : MonoBehaviour
     public void CambiarAEscena(string nombreEscena)
     {
         // Carga la escena especificada por nombre
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("LukaLuka");
     }
     public void CambiarAEscenaDos(string nombreEscena)
     {
         // Carga la escena especificada por nombre
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("Tutorial");
     }
     public void CambiarAEscenaTres(string nombreEscena)
     {
         // Carga la escena especificada por nombre
-        SceneManager.LoadScene("Demo");
+        SceneManager.LoadScene("Menu");
     }
 }
