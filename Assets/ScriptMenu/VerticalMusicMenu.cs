@@ -176,9 +176,12 @@ public class VerticalMusicMenu : MonoBehaviour
             var textoTMP = botones[i].GetComponentInChildren<TextMeshProUGUI>();
             var imagenFondo = botones[i].GetComponent<Image>();
 
+            // Desactivar/activar el componente Button según si está en el centro o no.
+            Button buttonComponent = botones[i].GetComponent<Button>();
             if (i == botones.Length / 2)
             {
                 // Botón seleccionado (centro).
+                buttonComponent.interactable = true; // Activar el botón en el centro.
                 textoTMP.color = Color.black;
                 textoTMP.fontSize = 10;
                 SetBotonOpacity(botones[i], 1f);
@@ -195,6 +198,7 @@ public class VerticalMusicMenu : MonoBehaviour
             else
             {
                 // Botones no seleccionados.
+                buttonComponent.interactable = false; // Desactivar el botón cuando no está en el centro.
                 textoTMP.color = Color.white;
                 textoTMP.fontSize = 7;
                 SetBotonOpacity(botones[i], 0.5f);
