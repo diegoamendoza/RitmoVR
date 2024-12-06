@@ -18941,7 +18941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 7edca4804625fc443acd29ee6bc58fc1, type: 3}
   delay: 0.8
-  notesJsonPath: Assets/chart/Rasputin_Dance.json
+  jsonName: Rasputin_Dance.json
   spawnParent: {fileID: 1278082486}
   redLeftPrefab: {fileID: 1924554034211727771, guid: 3519298e03a2f3b4582dfa8c639b8969,
     type: 3}

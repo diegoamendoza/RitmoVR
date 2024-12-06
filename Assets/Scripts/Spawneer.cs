@@ -13,7 +13,8 @@ public class Spawneer : MonoBehaviour
 
     [Header("Spawn Settings")]
     public float delay = 0f;
-    public string notesJsonPath = "Assets/NotesData.json"; // Ruta del archivo JSON
+    public string jsonName; 
+    private string notesJsonPath = Path.Combine(Application.streamingAssetsPath, "archivo.json"); // Ruta del archivo JSON
     public Transform spawnParent;
 
     [Header("Note Prefabs")]
@@ -29,6 +30,7 @@ public class Spawneer : MonoBehaviour
 
     private void Start()
     {
+        notesJsonPath = Path.Combine(Application.streamingAssetsPath, jsonName);
         audioSource = gameObject.AddComponent<AudioSource>();
         audioSource.clip = audioClip;
         audioSource.playOnAwake = false;

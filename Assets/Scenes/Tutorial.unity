@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.01686617, g: 0.015570378, b: 0.057015743, a: 1}
+  m_IndirectSpecularColor: {r: 0.016877556, g: 0.015579668, b: 0.0570308, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2134,7 +2134,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: dc75fca6ebb85da4dbe202927ce463f9, type: 3}
   delay: 0.8
-  notesJsonPath: Assets/AssetsPropios/chart/prueba.json
+  jsonName: TutorialChart.json
+  notesJsonPath: 
   spawnParent: {fileID: 1250737914}
   redLeftPrefab: {fileID: 1924554034211727771, guid: 3519298e03a2f3b4582dfa8c639b8969,
     type: 3}
