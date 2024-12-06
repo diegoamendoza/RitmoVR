@@ -85,7 +85,7 @@ public class Spawneer : MonoBehaviour
         GameObject prefab = GetPrefab((NoteColor)note.color, (NoteHand)note.hand);
         if (prefab == null) return;
 
-        Vector3 position = new Vector3((note.x - 8) * .2f, (((9-1) -note.y) -1) *.2f, -25);
+        Vector3 position = new Vector3((note.x - 8) * .2f, (((9-1) -note.y) -2) *.2f, -25);
         GameObject spawnedNote = Instantiate(prefab, position + spawnParent.position, Quaternion.identity, spawnParent);
         spawnedNotes.Add(spawnedNote);
 

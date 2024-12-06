@@ -57,26 +57,32 @@ public class NoteBehavior : MonoBehaviour
                 if(other.CompareTag("Red"))
                 {
                     Debug.Log("Nice red");
+                    Destroy(gameObject);
                 }
                 else
                 {
                     Debug.Log("Fail");
+                    
                 }
                 break;
             case 1:
                 if(other.CompareTag("Blue"))
                 {
                     Debug.Log("Nice");
+                    Destroy(gameObject);
                 }
                 else
                 {
                     Debug.Log("Fail");
+                  
                 }
                 break;
             case 2:
                 if(other.CompareTag("Purple"))
                 {
                     Debug.Log("Nice purple");
+                    Destroy(gameObject);
+                    
                 }
                 else
                 {
