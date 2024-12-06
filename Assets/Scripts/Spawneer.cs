@@ -57,7 +57,7 @@ public class Spawneer : MonoBehaviour
             }
 
             // Conexiones de las notas
-            UpdateNoteConnections();
+           
         }
     }
 
@@ -134,25 +134,7 @@ public class Spawneer : MonoBehaviour
         notes = container.notes;
     }
 
-    private void UpdateNoteConnections()
-    {
-        for (int i = 0; i < spawnedNotes.Count - 1; i++)
-        {
-            NoteBehavior current = spawnedNotes[i].GetComponent<NoteBehavior>();
-            NoteBehavior next = spawnedNotes[i + 1].GetComponent<NoteBehavior>();
-
-            if (current != null && next != null)
-            {
-                // Verificar si las notas están conectadas y si tienen la misma mano
-                if (next.NoteData.order == current.NoteData.order + 1 &&
-                    next.NoteData.hand == current.NoteData.hand)
-                {
-                    // Conectar la nota actual con la siguiente
-                    
-                }
-            }
-        }
-    }
+   
 
 }
 
