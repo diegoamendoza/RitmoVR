@@ -5319,7 +5319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioClip: {fileID: 8300000, guid: 9ba4e07b29336ac4e9204ff967600fe5, type: 3}
   delay: 0
-  notesJsonPath: Assets/chart/Popipo_Movements_Varied.json
+  notesJsonPath: Assets/chart/Popi_Dance.json
   spawnParent: {fileID: 1828850294}
   redLeftPrefab: {fileID: 5039807569579797499, guid: 4699cbb9ba7b4a64ba2adf7fa2296651,
     type: 3}
